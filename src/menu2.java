@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class menu2 {
 
 	static int move = 0;
+	static int winner = 0;
 	
 	public static void buildingthepanel(Container frame, int board[][]){
 			 
@@ -69,7 +70,14 @@ public class menu2 {
 		    gbc.gridwidth = 3;
 		    frame.add(m1, gbc);
 			
-			
+		    lb1 = new JLabel("WELCOME TO THE BEST TIC TAC TOE");
+		    //gbc.ipady = 200;
+			//gbc.weightx = 100;
+		    gbc.fill = GridBagConstraints.HORIZONTAL;
+		    gbc.gridy = 4;
+		    gbc.gridx = 0;
+		    gbc.gridwidth = 3;
+		    frame.add(lb1, gbc);
 			
 			
 			bt1 = new JButton(String.valueOf(pos00));
@@ -84,7 +92,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt1.setText(nw);
 					bt1.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			
@@ -105,7 +127,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt2.setText(nw);
 					bt2.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -124,7 +160,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt3.setText(nw);
 					bt3.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -143,7 +193,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt4.setText(nw);
 					bt4.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -162,7 +226,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt5.setText(nw);
 					bt5.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -181,7 +259,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt6.setText(nw);
 					bt6.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -200,7 +292,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt7.setText(nw);
 					bt7.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -219,7 +325,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt8.setText(nw);
 					bt8.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -238,7 +358,21 @@ public class menu2 {
 					String nw = changeVariableValue(value);
 					bt9.setText(nw);
 					bt9.setEnabled(false);
+					winner = checkWin(board);
+					//System.out.println(winner);
 					move = move + 1;
+					if(winner == 1) {
+						JOptionPane.showMessageDialog(frame, "Player X won the game!");
+					}else if(winner == 2) {
+						JOptionPane.showMessageDialog(frame, "Player O won the game!");
+					}else if(move == 9) {
+						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
+					}
+					if(player == 1) {
+						lb1.setText("Player O please choose your move!");
+					}else {
+						lb1.setText("Player X please choose your move!");
+					}
 				}
 			});
 			//gbc.weightx = 0.0;
@@ -247,14 +381,7 @@ public class menu2 {
 		    gbc.gridx = 2;
 		    frame.add(bt9, gbc);
 		    
-		    lb1 = new JLabel("TIC TAC TOE");
-		    //gbc.ipady = 200;
-			//gbc.weightx = 100;
-		    gbc.fill = GridBagConstraints.HORIZONTAL;
-		    gbc.gridy = 4;
-		    gbc.gridx = 0;
-		    gbc.gridwidth = 3;
-		    frame.add(lb1, gbc);
+		    
 		    
 			
 		}
@@ -329,6 +456,51 @@ public class menu2 {
 		}
 		
 		return r;
+		
+	}
+	
+	static int checkWin(int board[][]) {
+		
+		int confirm = 0;
+				
+				if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1) {
+					confirm = 1;
+				}else if (board[1][0] == 1 && board[1][1] == 1 && board[1][2] == 1){
+					confirm = 1;
+				}else if (board[2][0] == 1 && board[2][1] == 1 && board[2][2] == 1){
+					confirm = 1;
+				}else if (board[0][0] == 1 && board[1][0] == 1 && board[2][0] == 1){
+					confirm = 1;
+				}else if (board[0][1] == 1 && board[1][1] == 1 && board[2][1] == 1){
+					confirm = 1;
+				}else if (board[0][2] == 1 && board[1][2] == 1 && board[2][2] == 1){
+					confirm = 1;
+				}else if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1){
+					confirm = 1;
+				}else if (board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 1){
+					confirm = 1;
+				}else if (board[0][0] == 2 && board[0][1] == 2 && board[0][2] == 2) {
+					confirm = 2;
+				}else if (board[1][0] == 2 && board[1][1] == 2 && board[1][2] == 2){
+					confirm = 2;
+				}else if (board[2][0] == 2 && board[2][1] == 2 && board[2][2] == 2){
+					confirm = 2;
+				}else if (board[0][0] == 2 && board[1][0] == 2 && board[2][0] == 2){
+					confirm = 2;
+				}else if (board[0][1] == 2 && board[1][1] == 2 && board[2][1] == 2){
+					confirm = 2;
+				}else if (board[0][2] == 2 && board[1][2] == 2 && board[2][2] == 2){
+					confirm = 2;
+				}else if (board[0][0] == 2 && board[1][1] == 2 && board[2][2] == 2){
+					confirm = 2;
+				}else if (board[2][0] == 2 && board[1][1] == 2 && board[0][2] == 2){
+					confirm = 2;
+				}else {
+					confirm = 0;
+				}
+				
+				
+				return confirm;
 		
 	}
 
