@@ -6,6 +6,7 @@ public class gridbaglayout {
 
 	static int move = 0;
 	static int winner = 0;
+	static int gamesPlayed = 0;
 	
 	public static void buildingthepanel(Container frame, int board[][]){
 			 
@@ -15,6 +16,9 @@ public class gridbaglayout {
 			JMenu mn1, mn2; // Alias to create a menu objects
 			JMenuItem mni1, mni2, mni3; // Alias to create the index on the menu objects
 			GridBagConstraints gbc; // Alias to create the constraints
+			
+			//Set Font
+			Font font1 = new Font("SansSerif", Font.BOLD, 50);
 			
 			//Creation of all the objects
 			int p1 = gotValue(board, 0, 0);
@@ -49,6 +53,7 @@ public class gridbaglayout {
 			//gbc.weightx = 100;
 			
 			m1 = new JMenuBar();
+			m1.setSelected(null);
 			
 			mn1 = new JMenu("Menu");
 			mn2 = new JMenu("About");
@@ -71,13 +76,14 @@ public class gridbaglayout {
 		    gbc.ipady = 10;
 		    frame.add(m1, gbc);
 			
-		    lb1 = new JLabel("<html>WELCOME TO THE BEST TIC TAC TOE <br />Player X please choose your move!</html>");
+		    lb1 = new JLabel("<html>WELCOME TO THE BEST TIC TAC TOE <br />Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 		    gbc.ipady = 100;
 			//gbc.weightx = 100;
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 4;
 		    gbc.gridx = 0;
 		    gbc.gridwidth = 3;
+		    
 		    frame.add(lb1, gbc);
 			
 			
@@ -86,7 +92,9 @@ public class gridbaglayout {
 			//gbc.weightx = 1.0;
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 1;
-		    gbc.gridx = 0; 
+		    gbc.gridx = 0;
+		    //bt1.setFont(font1);
+		    bt1.setFocusPainted(false);
 		    frame.add(bt1, gbc);
 		    
 		    bt2 = new JButton(String.valueOf(pos01));
@@ -94,6 +102,8 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 1;
 		    gbc.gridx = 1;
+		    //bt2.setFont(font1);
+		    bt2.setFocusPainted(false);
 		    frame.add(bt2, gbc);
 		    
 		    bt3 = new JButton(String.valueOf(pos02));
@@ -101,6 +111,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 1;
 		    gbc.gridx = 2;
+		    bt3.setFocusPainted(false);
 		    frame.add(bt3, gbc);
 		    
 		    bt4 = new JButton(String.valueOf(pos10));
@@ -108,6 +119,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 2;
 		    gbc.gridx = 0;
+		    bt4.setFocusPainted(false);
 		    frame.add(bt4, gbc);
 		    
 		    bt5 = new JButton(String.valueOf(pos11));
@@ -115,6 +127,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 2;
 		    gbc.gridx = 1;
+		    bt5.setFocusPainted(false);
 		    frame.add(bt5, gbc);
 		    
 		    bt6 = new JButton(String.valueOf(pos12));
@@ -122,6 +135,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 2;
 		    gbc.gridx = 2;
+		    bt6.setFocusPainted(false);
 		    frame.add(bt6, gbc);
 		    
 		    bt7 = new JButton(String.valueOf(pos30));
@@ -129,6 +143,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 3;
 		    gbc.gridx = 0;
+		    bt7.setFocusPainted(false);
 		    frame.add(bt7, gbc);
 		    
 		    bt8 = new JButton(String.valueOf(pos31));
@@ -136,6 +151,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 3;
 		    gbc.gridx = 1;
+		    bt8.setFocusPainted(false);
 		    frame.add(bt8, gbc);
 		    
 		    bt9 = new JButton(String.valueOf(pos32));
@@ -143,6 +159,7 @@ public class gridbaglayout {
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 3;
 		    gbc.gridx = 2;
+		    bt9.setFocusPainted(false);
 		    frame.add(bt9, gbc);
 		    
 		    //Set all the actions with the objects
@@ -152,6 +169,7 @@ public class gridbaglayout {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
+					lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					
 					for(int i = 0; i < 3; i++) {
 						for(int j = 0; j < 3; j++) {
@@ -179,6 +197,8 @@ public class gridbaglayout {
 					bt9.setEnabled(true);
 					
 					move = 0;
+					
+					
 					
 				}
 				
@@ -231,9 +251,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -247,6 +267,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -259,6 +280,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -271,6 +293,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -288,9 +311,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -304,6 +327,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -316,6 +340,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -328,6 +353,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -345,9 +371,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -361,6 +387,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -373,6 +400,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -385,6 +413,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -402,9 +431,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -418,6 +447,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -430,6 +460,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -442,6 +473,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -459,9 +491,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -475,6 +507,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -487,6 +520,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -499,6 +533,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -516,9 +551,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -532,6 +567,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -544,6 +580,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -556,6 +593,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -573,9 +611,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -589,6 +627,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -601,6 +640,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -613,6 +653,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -630,9 +671,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -646,6 +687,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -658,6 +700,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -670,6 +713,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
@@ -687,9 +731,9 @@ public class gridbaglayout {
 					//System.out.println(winner);
 					move = move + 1;
 					if(player == 1) {
-						lb1.setText("Player O please choose your move!");
+						lb1.setText("<html>Player O please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}else {
-						lb1.setText("Player X please choose your move!");
+						lb1.setText("<html>Player X please choose your move! <br />Games played: " + gamesPlayed + "</html>");
 					}
 					if(winner == 1) {
 						JOptionPane.showMessageDialog(frame, "Player X won the game!");
@@ -703,6 +747,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(winner == 2) {
 						JOptionPane.showMessageDialog(frame, "Player O won the game!");
 						bt1.setEnabled(false);
@@ -715,6 +760,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}else if(move == 9) {
 						JOptionPane.showMessageDialog(frame, "Game Over, the game ended in draw!");
 						bt1.setEnabled(false);
@@ -727,6 +773,7 @@ public class gridbaglayout {
 						bt8.setEnabled(false);
 						bt9.setEnabled(false);
 						lb1.setText("Please Choose Menu > New Game to start a new game!");
+						gamesPlayed = gamesPlayed + 1;
 					}
 				}
 			});
