@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class menu2 {
+public class gridbaglayout {
 
 	static int move = 0;
 	static int winner = 0;
@@ -16,6 +16,7 @@ public class menu2 {
 			JMenuItem mni1, mni2, mni3; // Alias to create the index on the menu objects
 			GridBagConstraints gbc; // Alias to create the constraints
 			
+			//Creation of all the objects
 			int p1 = gotValue(board, 0, 0);
 			int p2 = gotValue(board, 0, 1);
 			int p3 = gotValue(board, 0, 2);
@@ -37,7 +38,7 @@ public class menu2 {
 			String pos32 = changeVariableValue(p9);
 			
 			
-			
+			//Start the design with gridbaglayout
 			
 			
 			frame.setLayout(new GridBagLayout());
@@ -67,10 +68,11 @@ public class menu2 {
 			gbc.gridy = 0;
 		    gbc.gridx = 0;
 		    gbc.gridwidth = 3;
+		    gbc.ipady = 10;
 		    frame.add(m1, gbc);
 			
 		    lb1 = new JLabel("<html>WELCOME TO THE BEST TIC TAC TOE <br />Player X please choose your move!</html>");
-		    //gbc.ipady = 200;
+		    gbc.ipady = 100;
 			//gbc.weightx = 100;
 		    gbc.fill = GridBagConstraints.HORIZONTAL;
 		    gbc.gridy = 4;
@@ -177,6 +179,37 @@ public class menu2 {
 					bt9.setEnabled(true);
 					
 					move = 0;
+					
+				}
+				
+			});
+		    
+		    mni2.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					JOptionPane.showMessageDialog(frame, "Thank you and I hope you enjoyed!");
+					
+					System.exit(0);
+					
+					
+				}
+				
+			});
+		    
+		    mni3.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					JOptionPane.showMessageDialog(frame, "Hello, I hope you have enjoyed this game!\n"
+							+ "This project was done to study, I started a short time ago developing in java and it getting being so fun. This was my first project with GUI, I'm being using console to develop.\n"
+							+ "I'm actualy studying Software Development in Anglia Ruskin University.\n\n"
+							+ "My github: https://github.com/JayFoxFoxy");
+					
+					System.exit(0);
+					
 					
 				}
 				
